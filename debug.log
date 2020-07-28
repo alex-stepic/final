@@ -1,1 +1,9 @@
 [0727/165318.581:ERROR:crash_report_database_win.cc(558)] GetFileAttributes C:\Users\ALEKSA~1.RYZ\AppData\Local\Temp\scoped_dir29052_671552968\Crashpad: The system cannot find the file specified. (0x2)
+[0727/171225.347:ERROR:crash_report_database_win.cc(558)] GetFileAttributes C:\Users\ALEKSA~1.RYZ\AppData\Local\Temp\scoped_dir23196_520071314\Crashpad: The system cannot find the file specified. (0x2)
+[0727/171606.745:ERROR:crash_report_database_win.cc(558)] GetFileAttributes C:\Users\ALEKSA~1.RYZ\AppData\Local\Temp\scoped_dir24868_4149996\Crashpad: The system cannot find the file specified. (0x2)
+[0728/151959.320:ERROR:crash_report_database_win.cc(558)] GetFileAttributes C:\Users\ALEKSA~1.RYZ\AppData\Local\Temp\scoped_dir19392_368875288\Crashpad: The system cannot find the file specified. (0x2)
+[0728/152618.000:ERROR:crash_report_database_win.cc(558)] GetFileAttributes C:\Users\ALEKSA~1.RYZ\AppData\Local\Temp\scoped_dir26952_1603991535\Crashpad: The system cannot find the file specified. (0x2)
+[0728/153045.757:ERROR:crash_report_database_win.cc(558)] GetFileAttributes C:\Users\ALEKSA~1.RYZ\AppData\Local\Temp\scoped_dir5492_824725953\Crashpad: The system cannot find the file specified. (0x2)
+[0728/153214.096:ERROR:prune_crash_reports.cc(35)] PruneCrashReportDatabase: Failed to get pending reports
+[0728/153313.160:ERROR:crash_report_database_win.cc(558)] GetFileAttributes C:\Users\ALEKSA~1.RYZ\AppData\Local\Temp\scoped_dir28636_1057369384\Crashpad: The system cannot find the file specified. (0x2)
+[0728/153326.635:ERROR:crash_report_database_win.cc(558)] GetFileAttributes C:\Users\ALEKSA~1.RYZ\AppData\Local\Temp\scoped_dir22176_151322928\Crashpad: The system cannot find the file specified. (0x2)
