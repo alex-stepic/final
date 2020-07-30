@@ -13,8 +13,11 @@ class ProductPageLocators ():
     PRODUCT_PRICE=(By.CSS_SELECTOR,".col-sm-6.product_main p.price_color")
     PRODUCT_NAME_ADDED=(By.CSS_SELECTOR,"div.container-fluid.page div.page_inner div.alert.alert-success:nth-child(1) .alertinner strong")
     BASKET_PRICE = (By.CSS_SELECTOR,"div.container-fluid.page div.page_inner div.alert.alert-info .alertinner strong")
+    SUCCESS_MESSAGE=(By.CSS_SELECTOR,"div.container-fluid.page div.page_inner div.alert.alert-success")
 
-
+class BasePageLocators ():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
 
 
 
