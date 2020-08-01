@@ -30,4 +30,5 @@ def test_guest_cant_see_product_in_basket_opened_from_main_page(browser):
     basket_page.empty_basket_message_present()
     
     
+    
 

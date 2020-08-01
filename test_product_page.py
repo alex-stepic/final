@@ -25,8 +25,9 @@ def solve_quiz_and_get_code(self):
         print("No second alert presented")
 
 
-@pytest.mark.needreview
-@pytest.mark.parametrize('link', ["http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0",
+@pytest.mark.parametrize('link', [pytest.param(
+                                      "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0",
+                                      marks=pytest.mark.need_review),
                                   "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer1",
                                   "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer2",
                                   "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer3",
@@ -51,7 +52,7 @@ def test_guest_can_add_product_to_basket(browser, link):
     product_page.basket_price_is_true(product_price)
 
 
-@pytest.mark.needreview
+@pytest.mark.need_review
 def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     page = ProductPage(browser, link_product)
     page.open()
@@ -61,7 +62,7 @@ def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     basket_page.empty_basket_message_present()
 
 
-@pytest.mark.needreview
+@pytest.mark.need_review
 def test_guest_can_go_to_login_page_from_product_page(browser):
     page = ProductPage(browser, link_product)
     page.open()
@@ -117,7 +118,7 @@ class TestUserAddToBasketFromProductPage():
         product_page.open()
         product_page.should_not_be_success_message()
 
-    @pytest.mark.needreview
+    @pytest.mark.need_review
     def test_user_can_add_product_to_basket(self, browser):
         product_page = ProductPage(browser, link_product)
         product_page.open()
@@ -128,5 +129,6 @@ class TestUserAddToBasketFromProductPage():
         # solve_quiz_and_get_code(product_page)
         product_page.succes_product_adding(product_name)
         product_page.basket_price_is_true(product_price)
+        
         
         
