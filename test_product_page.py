@@ -128,3 +128,5 @@ class TestUserAddToBasketFromProductPage():
         # solve_quiz_and_get_code(product_page)
         product_page.succes_product_adding(product_name)
         product_page.basket_price_is_true(product_price)
+        
+        
