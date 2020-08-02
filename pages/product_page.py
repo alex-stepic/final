@@ -1,7 +1,6 @@
 from .base_page import BasePage
 from .locators import ProductPageLocators
 from .locators import BasePageLocators
-#from selenium.webdriver.common.by import By
 
 class ProductPage(BasePage):
     def link_to_basket(self):
@@ -11,6 +10,7 @@ class ProductPage(BasePage):
     def add_to_basket(self):
         basket_link = self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET)
         basket_link.click()
+        self.solve_quiz_and_get_code()
 
     def should_be_basket_link(self):
         assert self.is_element_present(*BasePageLocators.BASKET_LINK), "Link to basket button is not presented"

@@ -2,21 +2,15 @@ from .base_page import BasePage
 from .locators import BasePageLocators
 from .locators import BasketPageLocators
 from .locators import ProductPageLocators
-from selenium.webdriver.common.by import By
 
 class BasketPage(BasePage):
     def add_to_basket(self):
         basket_link = self.browser.find_element(*BasePageLocators.BASKET_LINK)
         basket_link.click()
 
-    #def should_be_basket_link_in_product(self):
-    #    assert self.is_element_present(*BasePageLocators.BASKET_LINK), "Add to basket button is not presented"
-
     def should_be_basket_url(self):
-        # реализуйте проверку на корректный url адрес
         assert self.browser.current_url.find("basket")>0, f'String "{self.browser.current_url}" is not basket url'
-        #assert True
-
+       
     def should_not_be_products(self):
         assert self.is_not_element_present(*BasketPageLocators.PRODUCT_ROW), \
             "Product is presented, but should not be"

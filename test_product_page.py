@@ -3,26 +3,13 @@ from .pages.login_page import LoginPage
 from .pages.basket_page import BasketPage
 from selenium.common.exceptions import NoAlertPresentException
 import time
-import math
 import pytest
 
 link_product = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
 link_product_promo = "http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/?promo=newYear"
 
 
-def solve_quiz_and_get_code(self):
-    alert = self.browser.switch_to.alert
-    x = alert.text.split(" ")[2]
-    answer = str(math.log(abs((12 * math.sin(float(x))))))
-    alert.send_keys(answer)
-    alert.accept()
-    try:
-        alert = self.browser.switch_to.alert
-        alert_text = alert.text
-        print(f"Your code: {alert_text}")
-        alert.accept()
-    except NoAlertPresentException:
-        print("No second alert presented")
+
 
 
 @pytest.mark.parametrize('link', [pytest.param(
@@ -47,7 +34,6 @@ def test_guest_can_add_product_to_basket(browser, link):
     product_name = product_page.get_product_name()
     product_price = product_page.get_product_price()
     product_page.add_to_basket()
-    solve_quiz_and_get_code(product_page)
     product_page.succes_product_adding(product_name)
     product_page.basket_price_is_true(product_price)
 
@@ -75,9 +61,7 @@ def test_guest_can_go_to_login_page_from_product_page(browser):
 def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
     product_page = ProductPage(browser, link_product)
     product_page.open()
-
     product_page.add_to_basket()
-    # solve_quiz_and_get_code(product_page)
     product_page.should_not_be_success_message()
 
 
@@ -92,7 +76,6 @@ def test_message_disappeared_after_adding_product_to_basket(browser):
     product_page = ProductPage(browser, link_product)
     product_page.open()
     product_page.add_to_basket()
-    # solve_quiz_and_get_code(product_page)
     product_page.success_message_is_disappeared()
 
 
@@ -126,9 +109,10 @@ class TestUserAddToBasketFromProductPage():
         product_name = product_page.get_product_name()
         product_price = product_page.get_product_price()
         product_page.add_to_basket()
-        # solve_quiz_and_get_code(product_page)
         product_page.succes_product_adding(product_name)
         product_page.basket_price_is_true(product_price)
+
+        
         
         
         
